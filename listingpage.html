@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StyleNest - Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color:  #E6E6FA;
+    }
+
+    .navbar {
+      background-color: #6f42c1; 
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #fff !important;
+    }
+
+    .nav-link:hover {
+      color: #d1b3ff !important;
+    }
+
+    .card {
+      background-color: #f8f0ff;
+      border: 1px solid #e0cfff;
+      box-shadow: 0 4px 8px rgba(111, 66, 193, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card-title {
+      color: #6f42c1;
+    }
+
+    .btn-primary {
+      background-color: #6f42c1;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #5a32a3;
+    }
+
+    .list-group-item {
+      background-color: #f3e8ff;
+      border: none;
+    }
+
+    .list-group-item:hover {
+      background-color: #e5d5ff;
+    }
+
+    footer {
+      background-color: #6f42c1;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    footer a {
+      color: #d9bfff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <style>
+
+    .card {
+      height: 100%;
+    }
+
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">StyleNest</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+           <li class="nav-item">
+    <a class="nav-link" href="groupdomenden.html">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="listingpage.html">Shop</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="shoppingcart.html">Cart</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="contact.html">Contact Us</a>
+  </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="container my-5">
+    <h2>Shop by Category</h2>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="list-group">
+          <a href="#tshirts" class="list-group-item list-group-item-action">T-shirts</a>
+          <a href="#jackets" class="list-group-item list-group-item-action">Jackets</a>
+          <a href="#pants" class="list-group-item list-group-item-action">Pants</a>
+          <a href="#shorts" class="list-group-item list-group-item-action">Shorts</a>
+          <a href="#shoes" class="list-group-item list-group-item-action">Shoes</a>
+        </div>
+      </div>
+
+      <div class="col-md-10">
+
+      
+        <h3 id="tshirts">T-shirts</h3>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <img src="navybluetshirt.webp" class="card-img-top" alt="T-shirt 1">
+              <div class="card-body">
+                <h5 class="card-title">Navy Blue Relaxed Fit Heavyweight T-Shirt</h5>
+                <p class="card-text">$15.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Navy Blue Relaxed Fit Heavyweight T-Shirt', 15)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="WhiteTS.png" class="card-img-top" alt="T-shirt 2">
+              <div class="card-body">
+                <h5 class="card-title">Classic White Crew Neck T-shirt</h5>
+                <p class="card-text">$18.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Classic White Crew Neck T-shirt', 18)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="BlackTS.png" class="card-img-top" alt="T-shirt 3">
+              <div class="card-body">
+                <h5 class="card-title">Black Graphic Print T-shirt</h5>
+                <p class="card-text">$20.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Black Graphic Print T-shirt', 20)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="RedTs.png" class="card-img-top" alt="T-shirt 4">
+              <div class="card-body">
+                <h5 class="card-title">Red Slim Fit T-shirt</h5>
+                <p class="card-text">$17.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Red Slim Fit T-shirt', 17)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="GreenTs.png" class="card-img-top" alt="T-shirt 5">
+              <div class="card-body">
+                <h5 class="card-title">Green Comfort T-shirt</h5>
+                <p class="card-text">$19.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Green Comfort T-shirt', 19)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+        <h3 id="jackets">Jackets</h3>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="card">
+              <img src="Bomber.png" class="card-img-top" alt="Jacket 1">
+              <div class="card-body">
+                <h5 class="card-title">Men's Bomber Jacket</h5>
+                <p class="card-text">$45.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Men\'s Bomber Jacket', 45)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="winter.png" class="card-img-top" alt="Jacket 2">
+              <div class="card-body">
+                <h5 class="card-title">Quilted Winter Jacket</h5>
+                <p class="card-text">$60.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Quilted Winter Jacket', 60)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="denim.png" class="card-img-top" alt="Jacket 3">
+              <div class="card-body">
+                <h5 class="card-title">Denim Jacket</h5>
+                <p class="card-text">$50.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Denim Jacket', 50)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="hood.png" class="card-img-top" alt="Jacket 4">
+              <div class="card-body">
+                <h5 class="card-title">Hooded Waterproof Jacket</h5>
+                <p class="card-text">$65.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Hooded Waterproof Jacket', 65)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="wind.png" class="card-img-top" alt="Jacket 5">
+              <div class="card-body">
+                <h5 class="card-title">Lightweight Windbreaker</h5>
+                <p class="card-text">$55.00</p>
+                <button class="btn btn-primary" onclick="addToCart('Lightweight Windbreaker', 55)">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+<h3 id="pants">Pants</h3>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card">
+      <img src="cino.png" class="card-img-top" alt="Pants 1">
+      <div class="card-body">
+        <h5 class="card-title">Slim Fit Chino Pants</h5>
+        <p class="card-text">$30.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Slim Fit Chino Pants', 30)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="jogger.png" class="card-img-top" alt="Pants 2">
+      <div class="card-body">
+        <h5 class="card-title">Tapered Jogger Pants</h5>
+        <p class="card-text">$25.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Tapered Jogger Pants', 25)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="casualdenim.png" class="card-img-top" alt="Pants 3">
+      <div class="card-body">
+        <h5 class="card-title">Casual Denim Jeans</h5>
+        <p class="card-text">$35.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Casual Denim Jeans', 35)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="trousers.png" class="card-img-top" alt="Pants 4">
+      <div class="card-body">
+        <h5 class="card-title">Straight Leg Trousers</h5>
+        <p class="card-text">$40.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Straight Leg Trousers', 40)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="formalpants.png" class="card-img-top" alt="Pants 5">
+      <div class="card-body">
+        <h5 class="card-title">Classic Formal Pants</h5>
+        <p class="card-text">$38.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Classic Formal Pants', 38)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3 id="shorts">Shorts</h3>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card">
+      <img src="casualshort.png" class="card-img-top" alt="Shorts 1">
+      <div class="card-body">
+        <h5 class="card-title">Cotton Casual Shorts</h5>
+        <p class="card-text">$22.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Cotton Casual Shorts', 22)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="denimcut.png" class="card-img-top" alt="Shorts 2">
+      <div class="card-body">
+        <h5 class="card-title">Denim Cut-off Shorts</h5>
+        <p class="card-text">$28.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Denim Cut-off Shorts', 28)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="cargoshort.png" class="card-img-top" alt="Shorts 3">
+      <div class="card-body">
+        <h5 class="card-title">Relaxed Fit Cargo Shorts</h5>
+        <p class="card-text">$26.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Relaxed Fit Cargo Shorts', 26)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="training.png" class="card-img-top" alt="Shorts 4">
+      <div class="card-body">
+        <h5 class="card-title">Athletic Training Shorts</h5>
+        <p class="card-text">$24.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Athletic Training Shorts', 24)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="linen.png" class="card-img-top" alt="Shorts 5">
+      <div class="card-body">
+        <h5 class="card-title">Linen Summer Shorts</h5>
+        <p class="card-text">$29.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Linen Summer Shorts', 29)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3 id="shoes">Shoes</h3>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card">
+      <img src="sneakers.png" class="card-img-top" alt="Shoes 1">
+      <div class="card-body">
+        <h5 class="card-title">White Casual Sneakers</h5>
+        <p class="card-text">$50.00</p>
+        <button class="btn btn-primary" onclick="addToCart('White Casual Sneakers', 50)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="loafers.png" class="card-img-top" alt="Shoes 2">
+      <div class="card-body">
+        <h5 class="card-title">Classic Loafers</h5>
+        <p class="card-text">$55.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Classic Loafers', 55)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="running.png" class="card-img-top" alt="Shoes 3">
+      <div class="card-body">
+        <h5 class="card-title">Running Sports Shoes</h5>
+        <p class="card-text">$60.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Running Sports Shoes', 60)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="blackshoes.png" class="card-img-top" alt="Shoes 4">
+      <div class="card-body">
+        <h5 class="card-title">Black Formal Shoes</h5>
+        <p class="card-text">$70.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Black Formal Shoes', 70)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <img src="canvas.png" class="card-img-top" alt="Shoes 5">
+      <div class="card-body">
+        <h5 class="card-title">Slip-on Canvas Shoes</h5>
+        <p class="card-text">$45.00</p>
+        <button class="btn btn-primary" onclick="addToCart('Slip-on Canvas Shoes', 45)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+      
+
+      </div>
+    </div>
+  </div>
+
+<footer class="text-center">
+    <div class="container">
+      <p>&copy; 2025 StyleNest. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </div>
+  </footer>
+  <script>
+
+    function addToCart(productName, price) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name: productName, price: price, quantity: 1 });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(productName + ' added to cart!');
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

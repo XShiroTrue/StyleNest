@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - StyleNest</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom purple theme */
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: #6f42c1; /* Purple color */
+    }
+
+    .navbar-brand, .nav-link {
+      color: white !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #e2aaff !important; /* Lighter purple for hover effect */
+    }
+
+    .btn-primary {
+      background-color: #6f42c1; /* Purple button */
+      border-color: #6f42c1;
+    }
+
+    .btn-primary:hover {
+      background-color: #5a2d9b; /* Darker purple on hover */
+      border-color: #5a2d9b;
+    }
+
+    .form-label {
+      color: #6f42c1;
+    }
+
+    .modal-content {
+      background-color: #f3f0f6; /* Light purple background */
+    }
+
+    .modal-header {
+      background-color: #6f42c1;
+      color: white;
+    }
+
+    .modal-footer .btn-primary {
+      background-color: #6f42c1;
+      border-color: #6f42c1;
+    }
+
+    .modal-footer .btn-primary:hover {
+      background-color: #5a2d9b;
+      border-color: #5a2d9b;
+    }
+
+    .modal-footer .btn-secondary {
+      background-color: #e2aaff;
+      border-color: #e2aaff;
+    }
+
+    .modal-footer .btn-secondary:hover {
+      background-color: #d397d0;
+      border-color: #d397d0;
+    }
+
+    .total-container {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="groupdomenden.html">StyleNest</a> 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="groupdomenden.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="listingpage.html">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="shoppingcart.html">Cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <div class="container my-5">
+    <h2 class="text-center text-purple">Checkout</h2>
+
+   
+    <div class="total-container">
+      <h3>Total: <span id="total-price">$0.00</span></h3>
+    </div>
+
+
+    <form id="checkout-form">
+      <div class="mb-3">
+        <label for="full-name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="full-name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <textarea class="form-control" id="address" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="payment-method" class="form-label">Payment Method</label>
+        <select class="form-select" id="payment-method" required>
+          <option value="credit-card">Credit Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Place Order</button>
+    </form>
+  </div>
+
+  <div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-labelledby="orderSuccessModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="orderSuccessModalLabel">Order Placed Successfully</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Your order has been placed successfully. Thank you for shopping with us!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="window.location.href='listingpage.html'">Go to Shop</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+ 
+    function updateTotal() {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      let totalPrice = 0;
+      
+     
+      cartItems.forEach(item => {
+        totalPrice += item.price * item.quantity;
+      });
+
+     
+      document.getElementById('total-price').textContent = `$${totalPrice.toFixed(2)}`;
+    }
+
+    
+    document.getElementById('checkout-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const fullName = document.getElementById('full-name').value;
+      const email = document.getElementById('email').value;
+      const address = document.getElementById('address').value;
+      const paymentMethod = document.getElementById('payment-method').value;
+
+     
+      alert(`Order placed successfully!\nName: ${fullName}\nEmail: ${email}\nAddress: ${address}\nPayment Method: ${paymentMethod}`);
+
+      
+      localStorage.removeItem('cart');
+
+     
+      const orderSuccessModal = new bootstrap.Modal(document.getElementById('orderSuccessModal'));
+      orderSuccessModal.show();
+
+      setTimeout(() => {
+        window.location.href = "listingpage.html";
+      }, 3000); 
+    });
+
+   
+    window.onload = function() {
+      updateTotal();
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
